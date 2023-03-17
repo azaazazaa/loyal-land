@@ -9,5 +9,6 @@ export default defineConfig({
     },
     extensions: [".js", ".vue"],
   },
+  base: '/loyal-land/',
   plugins: [vue()]
 })

@@ -1,11 +1,12 @@
 <script setup>
+import { rootUrl } from '@/plugins/getRoutes.js'
 import { ref } from 'vue'
 
 const selectedPage = ref(0)
 
 const pages = ref([
   {
-  imgLinks: ['/src/assets/card1.png', '/src/assets/card2.png', '/src/assets/card3.png'],
+  imgLinks: [rootUrl+'assets/card1.png', rootUrl+'assets/card2.png', rootUrl+'assets/card3.png'],
   descContetn: [
     'Настраивайте коммуникации под разные поводы в форме игровой карточки', 
     'Выберите адресатов, виртуальную открытку под нужный повод, подарок или вознаграждение, прикрепите опрос и установите дату отправки', 
@@ -13,7 +14,7 @@ const pages = ref([
   ]
   },
   {
-  imgLinks: ['/src/assets/card2_1.png', '/src/assets/card2_2.png', '/src/assets/card2_3.png'],
+  imgLinks: [rootUrl+'assets/card2_1.png', rootUrl+'assets/card2_2.png', rootUrl+'assets/card2_3.png'],
   descContetn: [
     'Сотрудник выбирает кого и за что хочет поблагодарить', 
     'Определяет количество алмазов, которые он отправит в качестве благодарности', 
@@ -21,9 +22,6 @@ const pages = ref([
   ]
   }])
 
-const getImageUrl = (link) => {
-  return link
-}
 </script>
 <template>
   <div class="mb-12">
@@ -41,7 +39,7 @@ const getImageUrl = (link) => {
     <div>
       <div class="flex justify-between items-start gap-14 mb-4">
         <div v-for="imgLink, index in pages[selectedPage].imgLinks" :key="`card_${index}`" class="flex-1">
-          <img :src="getImageUrl(imgLink)" :alt="`card_${index}`">
+          <img :src="imgLink" :alt="`card_${index}`">
         </div>
       </div>
       <div class="flex justify-between items-start gap-14">

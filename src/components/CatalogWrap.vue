@@ -1,24 +1,26 @@
 <script setup>
+import { rootUrl } from '@/plugins/getRoutes.js'
 import { ref } from 'vue'
+
   const pages = ref([
     {
       btnLabel: 'Впечатление', 
-      btnImg: '/src/assets/btnImg1.png', 
+      btnImg: rootUrl+'assets/btnImg1.png', 
       isOpen: true
     },
     {
       btnLabel: 'Забота о сотрудниках', 
-      btnImg: '/src/assets/btnImg1.png', 
+      btnImg: rootUrl+'assets/btnImg1.png', 
       isOpen: false
     },
     {
       btnLabel: 'Обучение', 
-      btnImg: '/src/assets/btnImg1.png', 
+      btnImg: rootUrl+'assets/btnImg1.png', 
       isOpen: false
     },
     {
       btnLabel: 'Развитие', 
-      btnImg: '/src/assets/btnImg1.png', 
+      btnImg: rootUrl+'assets/btnImg1.png', 
       isOpen: false
     },
   ])
@@ -26,68 +28,68 @@ import { ref } from 'vue'
   const cardsContetn = ref([
     [
       {
-        imgSrc: '/src/assets/siesta.png',
+        imgSrc: rootUrl+'assets/siesta.png',
         headerLabel: 'сиеста',
         description: 'Представьте, что обеденный перерыв три часа вместо одного. Достаточно времени, чтобы прогуляться, пройти урок иностранного языка, почитать в уютном кафе или вздремнуть в переговорной.'
       },
       {
-        imgSrc: '/src/assets/roleChanges.png',
+        imgSrc: rootUrl+'assets/roleChanges.png',
         headerLabel: 'поменяться ролями',
         description: 'Вы хорошо знаете свои рабочие обязанности. А как проходит рабочий день ваших коллег? Обмен опытом открывает другие возможности и сферы влияния. Вдохновляйтесь на новое!'
       },
       {
-        imgSrc: '/src/assets/library.png',
+        imgSrc: rootUrl+'assets/library.png',
         headerLabel: 'читальный зал',
         description: 'Подарок для тех, кому не хватает времени или условий, чтобы удобно устроившись в кресле, почитать бумажную книгу без отвлечений.'
       },
     ],
     [
       {
-        imgSrc: '/src/assets/space.png',
+        imgSrc: rootUrl+'assets/space.png',
         headerLabel: 'я сегодня в космос',
         description: 'Может оказаться, что звезда, которая ночью видна из окна, вовсе не звезда, а планета. Через телескопы мира та планета откроется новыми видами. А если космос покажется одиноким, встречайте закат на Марсе с Curiosity.'
       },
       {
-        imgSrc: '/src/assets/colorsHoly.png',
+        imgSrc: rootUrl+'assets/colorsHoly.png',
         headerLabel: 'другая индия',
         description: 'Индия у каждого своя. Путешествуйте без билетов через чувства, мысли, истории, фотографии, фильмы и рассказы других людей.'
       },
       {
-        imgSrc: '/src/assets/forest.png',
+        imgSrc: rootUrl+'assets/forest.png',
         headerLabel: 'сосновый лес',
         description: 'Вы помните свои прогулки по лесу? Как дышалось? О чем думали? Что запомнилось – запахи, звуки,  настроение? День в лесу – подарок-лекарство для тела и ума.'
       },
     ],
     [
       {
-        imgSrc: '/src/assets/futureBecame.png',
+        imgSrc: rootUrl+'assets/futureBecame.png',
         headerLabel: 'Будущее наступило',
         description: 'Ты человек? Вопрос, который мы задаём всё чаще. Это курс о разговорах с чат-ботами и нейросетях. Как пользоваться, о чем говорить, чему учиться друг у друга?'
       },
       {
-        imgSrc: '/src/assets/loveWithoutRules.png',
+        imgSrc: rootUrl+'assets/loveWithoutRules.png',
         headerLabel: 'любовь по правилам и без',
         description: 'Готовы влюбиться в того, кто рядом? 36 вопросов для моментальной влюбленности и 390 минут беспрерывной любви.'
       },
       {
-        imgSrc: '/src/assets/codeAccessible.png',
+        imgSrc: rootUrl+'assets/codeAccessible.png',
         headerLabel: 'доступный код',
         description: 'Программист – профессия, о которой сейчас знают все, но что именно знают? Легендарный Гарвардский курс CS50 «Основы программирования» - интересное вовлечение в профессию для каждого.'
       },
     ],
     [
       {
-        imgSrc: '/src/assets/hobbyTime.png',
+        imgSrc: rootUrl+'assets/hobbyTime.png',
         headerLabel: 'зелёная стена',
         description: 'Хобби приносит неплохой доход, а своё дело открыть страшно. Может не хватает знаний, а потому и уверенности, или хочется поддержки и полезных советов. Вдохновитесь и начните сегодня!'
       },
       {
-        imgSrc: '/src/assets/artTravel.png',
+        imgSrc: rootUrl+'assets/artTravel.png',
         headerLabel: 'руками трогать',
         description: 'Не разбираетесь в искусстве? Отлично! В пижаме, не выходя из дома, потрогайте руками картину, послушайте живопись, поиграйте в художника и искусствоведа, а на десерт сходите в музей.'
       },
       {
-        imgSrc: '/src/assets/misic.png',
+        imgSrc: rootUrl+'assets/misic.png',
         headerLabel: 'музыка',
         description: 'Электронная музыка изменила представление о том, что значит быть музыкантом. Вы хотите услышать, как звучит ваша музыка? Наслаждайтесь!'
       },

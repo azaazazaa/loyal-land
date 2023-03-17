@@ -59,25 +59,25 @@ const itServiceInfo = [
         <h1 class="mb-12 mx-auto w-3/5 text-center uppercase">Мы знаем, как влюбить в ваш бренд важных для бизнеса людей</h1>
         <div class="flex justify-between items-center mb-20">
           <InfoCard :header="'Сотрудники'" 
-                    :imgSrc="'../src/assets/workers.svg'" 
+                    :imgSrc="rootUrl+'assets/workers.svg'" 
                     :imgLabel="'Выстраиваем коммуникацию'"
-                    :mainImg="'../src/assets/communication.png'"
+                    :mainImg="rootUrl+'assets/communication.png'"
                     :mainContent="['Повышаем eNPS', 'Строим hr-бренд']"/>
           <InfoCard :header="'Клиенты'" 
-                    :imgSrc="'../src/assets/clients.svg'" 
+                    :imgSrc="rootUrl+'assets/clients.svg'" 
                     :imgLabel="'Формируем доверие'"
-                    :mainImg="'../src/assets/loyalty.png'"
+                    :mainImg="rootUrl+'assets/loyalty.png'"
                     :mainContent="['Увеличиваем скорость принятия решения о покупке']"/>
           <InfoCard :header="'Партнёры'" 
-                    :imgSrc="'../src/assets/partners.svg'" 
+                    :imgSrc="rootUrl+'assets/partners.svg'" 
                     :imgLabel="'Повышаем эффективность'"
-                    :mainImg="'../src/assets/effectiv.png'"
+                    :mainImg="rootUrl+'assets/effectiv.png'"
                     :mainContent="['Повышаем лояльность', 'Увеличиваем узнаваемость']"/>
         </div>
         <h1 class="mx-auto w-3/5 text-center">IT - СЕРВИС ДЛЯ СМЫСЛОВЫХ КОММУНИКАЦИЙ </h1>
         <div class="relative w-full">
           <img src="@/assets/communication_big.png" alt="img" class="h-[700px] object-contain mx-auto">
-          <div v-for="comp, index in itServiceInfo" :key="index" class="absolute bg-white rounded-2xl py-3 px-4 w-96" :class="comp['posClass']">
+          <div v-for="comp, ёindex in itServiceInfo" :key="index" class="absolute bg-white rounded-2xl py-3 px-4 w-96" :class="comp['posClass']">
             <p><span class="font-bold">{{comp['bold']}}</span> {{ comp['text'] }}</p>
           </div>
         </div>
@@ -166,6 +166,8 @@ const itServiceInfo = [
 </template>
 
 <script>
+import { rootUrl } from '@/plugins/getRoutes.js'
+
 export default {
     name: "HR-page",
     components: { InfoCard }
