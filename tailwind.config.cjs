@@ -11,7 +11,8 @@ module.exports = {
         pink: '#FF7475',
         purple_dark: '#381E72',
         header_links: '#050038',
-        gold: '#FEB100'
+        gold: '#FEB100',
+        pink_light: '#EA6669'
       },
       fontSize: {
         'big': ['32px', '40px']

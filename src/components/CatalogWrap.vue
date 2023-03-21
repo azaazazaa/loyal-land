@@ -116,7 +116,7 @@ import { ref } from 'vue'
   <div class="flex items-center h-[418px]">
     <div class="btn_wrapper w-[315px] mr-8 flex flex-col justify-between items-stretch">
       <div class="w-[315px]">
-        <button class="button__tsar mb-7" 
+        <button class="button__tsar mb-7 hover:!bg-pink_light hover:text-white transition-all" 
                 v-for="page, index in pages" :key="index"
                 :class="{'active' : page.isOpen}"
                 @click="openningPage(index)">
@@ -124,8 +124,8 @@ import { ref } from 'vue'
           {{page.btnLabel}}
         </button>
       </div>
-      <a class="button__gold mb-6 w-[315px] flex justify-center items-center" href="https://loyal.gift/dashboard">Хочу попробовать</a>
-      <button class="button__white w-[315px]" @click="$emit('openModal')">Свяжитесь со мной</button>
+      <a class="button__gold mb-6 w-[315px] flex justify-center items-center transition-all hover:drop-shadow" href="https://loyal.gift/dashboard">Хочу попробовать</a>
+      <button class="button__white w-[315px] transition-all hover:drop-shadow" @click="$emit('openModal')">Свяжитесь со мной</button>
     </div>
     <div class="cards_wrapper gap-2 flex justify-between items-stretch h-full">
       <div class="card w-auto h-full flex-1 flex flex-col items-stretch"

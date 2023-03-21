@@ -40,7 +40,7 @@ const itServiceInfo = [
 <template>
   <div class="bg-[#F3EDED]">
     <HeaderComp></HeaderComp>
-    <div class="container mx-auto px-36">
+    <div class="container mx-auto px-0 xl:px-10 2xl:px-36">
       <div class="flex justify-center items-center relative mb-20">
         <div class="flex flex-col justify-start items-start">
           <h1 class="mb-4">
@@ -49,7 +49,7 @@ const itServiceInfo = [
             В <span class="text-pink">АМБАССАДОРОВ</span> БРЕНДА
           </h1>
           <RunningLine :stringContent="stringContent"></RunningLine>
-          <button class="button bg-[#FEB100] text-white border-none h-14 w-72 font-bold" @click="showModal = true">Запросить демо</button>
+          <button class="button bg-[#FEB100] text-white border-none h-14 w-72 font-bold hover:!bg-pink_light transition-all hover:shadow-pink_light" @click="showModal = true">Запросить демо</button>
         </div>
         <img src="@/assets/greeting_img.png" class="h-[775px] object-cover" alt="greetingPage">
         <img src="@/assets/greeting-decoration.png" class="absolute -top-10 -right-5" alt="dec">
@@ -99,8 +99,7 @@ const itServiceInfo = [
         <OpinionPart></OpinionPart>
         <h1 class="mb-10 mx-auto text-center uppercase">Калькулятор тарифов</h1>
         <TariffCalculation></TariffCalculation>
-        <p class="italic text-center mb-7">*тарифы не включают стоимость материального контента, размещённого на платформе, услуги логистики и хранения</p>
-        <button class="button__gold w-[300px] h-10 mx-auto shadow-sm mb-16" @click="showModal = true">Купить</button>
+        <button class="button__gold w-[300px] h-10 mx-auto shadow-sm mb-16 hover:shadow-lg transition-all" @click="showModal = true">Купить</button>
         <h1 class="uppercase mb-6 text-center mx-auto">Ответы на часто задаваемые вопросы</h1>
         <div class="w-full mb-10">
           <div class="mx-auto w-full rounded-2xl bg-white py-2 mb-2">
@@ -157,7 +156,7 @@ const itServiceInfo = [
         </div>
         <h1 class="mx-auto text-center mb-8 uppercase">Выбрать удобное время для звонка</h1>
         <div class="mb-16 flex justify-center items-center">
-          <iframe src="https://calendly.com/petrashko-mikhail_loyalgift/45min" width="1001" height="700" frameborder="0"></iframe>
+          <iframe src="https://calendly.com/petrashko-mikhail_loyalgift/45min" width="1001" height="700" frameborder="0" id="iframe"></iframe>
         </div>
       </div>
     </div>
@@ -175,5 +174,10 @@ export default {
 </script>
 
 <style scoped>
-
+/* #iframe{
+  width: 600px; 
+  height: 436px; 
+  padding: 0; 
+  overflow: hidden;
+} */
 </style>
