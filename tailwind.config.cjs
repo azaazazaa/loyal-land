@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'customChat': ' 0px 6px 20px 5px rgba(0, 0, 0, 0.25);'
+      },
       colors: {
         purple: '#6750A4',
         pink: '#FF7475',
@@ -15,7 +18,7 @@ module.exports = {
         pink_light: '#EA6669'
       },
       fontSize: {
-        'big': ['32px', '40px']
+        'big': ['30px', '38px']
       },
     },
   },

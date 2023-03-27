@@ -10,17 +10,17 @@ import { ref } from 'vue'
     },
     {
       btnLabel: 'Забота о сотрудниках', 
-      btnImg: rootUrl+'assets/btnImg1.png', 
+      btnImg: rootUrl+'assets/impression.png', 
       isOpen: false
     },
     {
       btnLabel: 'Обучение', 
-      btnImg: rootUrl+'assets/btnImg1.png', 
+      btnImg: rootUrl+'assets/studying.png', 
       isOpen: false
     },
     {
       btnLabel: 'Развитие', 
-      btnImg: rootUrl+'assets/btnImg1.png', 
+      btnImg: rootUrl+'assets/developmentIcon.png', 
       isOpen: false
     },
   ])
@@ -124,13 +124,13 @@ import { ref } from 'vue'
           {{page.btnLabel}}
         </button>
       </div>
-      <a class="button__gold mb-6 w-[315px] flex justify-center items-center transition-all hover:drop-shadow" href="https://loyal.gift/dashboard">Хочу попробовать</a>
-      <button class="button__white w-[315px] transition-all hover:drop-shadow" @click="$emit('openModal')">Свяжитесь со мной</button>
+      <button class="button__gold w-[315px] transition-all hover:drop-shadow" @click="$emit('openModal')">Хочу попробовать</button>
+      <!-- <button class="button__gold w-[315px] transition-all hover:drop-shadow" @click="$emit('openModal')">Свяжитесь со мной</button> -->
     </div>
     <div class="cards_wrapper gap-2 flex justify-between items-stretch h-full">
       <div class="card w-auto h-full flex-1 flex flex-col items-stretch"
            v-for="card, index in cardsContetn[currentIndex]" :key="index">
-        <img :src="getImageUrl(card.imgSrc)" alt="img" class="rounded-t-2xl bg-[#21252D]">
+        <img :src="getImageUrl(card.imgSrc)" alt="img" class="rounded-t-2xl" :class="{'bg-[#21252D]' : card.headerLabel === 'Будущее наступило'}">
         <div class="bg-white flex-col justify-around 
                   items-stretch h-full pb-5 px-5 pt-5 box-content rounded-b-2xl shadow-lg ">
           <h3 class="text-purple text-center uppercase font-bold text-base mb-2">{{ card.headerLabel }}</h3>

@@ -3,11 +3,12 @@ import {ref} from 'vue'
 import HeaderComp from "@/components/HeaderComp.vue"
 import RunningLine from "@/components/custom_components/RunningLine.vue"
 import MyModal from '@/components/UI_components/MyModal.vue'
-import InfoCard from '../components/custom_components/infoCard.vue'
+import InfoCard from '@/components/custom_components/infoCard.vue'
 import CatalogWrap from '@/components/CatalogWrap.vue'
 import CareChangerInfo from '@/components/CareChangerInfo.vue'
 import OpinionPart from '@/components/custom_components/OpinionPart.vue'
 import TariffCalculation from '@/components/TariffCalculation.vue'
+import ChatComponent from '@/components/custom_components/ChatComponent.vue'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 import Footer from '@/components/Footer.vue'
 import { ChevronUpIcon } from '@heroicons/vue/20/solid'
@@ -53,6 +54,24 @@ const itServiceInfo = [
         </div>
         <img src="@/assets/greeting_img.png" class="h-[775px] object-cover" alt="greetingPage">
         <img src="@/assets/greeting-decoration.png" class="absolute -top-10 -right-5" alt="dec">
+        <div class="absolute bottom-24 left-1/3 h-40 flex flex-col justify-between items-stretch">
+          <ChatComponent>
+            <template #img>
+              <img src="@/assets/chatIcon.png" alt="chatIcon" class="mr-3 w-10 h-10 rounded-full">
+            </template>
+            <template #text>
+                <p class="font-normal text-sm">Благодарю за участие<br/> в проекте, выберите,<br/> пожалуйста, подарок!</p>
+            </template>
+          </ChatComponent>
+          <ChatComponent class="relative left-24">
+            <template #img>
+              <img src="@/assets/chatIcon_2.png" alt="chatIcon" class="mr-3 w-10 h-10 rounded-full">
+            </template>
+            <template #text>
+                <p class="font-normal text-sm">Выбрал, спасибо,<br/> мне очень приятно!</p>
+            </template>
+          </ChatComponent>
+        </div>
       </div>
       <MyModal :isOpen="showModal" @close="() => {showModal = false}"/>
       <div class="flex flex-col justify-start items-stretch">
@@ -89,7 +108,7 @@ const itServiceInfo = [
         <div class="relative z-10 flex justify-evenly items-center mb-14">
           <img src="@/assets/giftDecor.svg" alt="decor" class="z-0 absolute top-6 left-0">
           <img src="@/assets/giftHand.png" alt="giftIcon" class="z-10 relative">
-          <div class="z-10 flex w-[348px] justify-between h-[240px] items-stretch flex-col mr-[25px] top-2 relative -left-[40px]">
+          <div class="z-10 flex w-[348px] justify-between h-[240px] items-stretch flex-col mr-[25px] top-2 relative -left-[30px]">
             <p><span class="font-bold">Автоматизируйте процесс</span><br/> и управляйте эффективностью вовлечённых в процесс распределения и доставки сотрудников компании</p>
             <p><span class="font-bold">Оптимизируйте затраты</span><br/> человеческого ресурса<br/> за счёт передачи на аутсорс непрофильных задач</p>
           </div>
@@ -100,8 +119,8 @@ const itServiceInfo = [
         <h1 class="mb-10 mx-auto text-center uppercase">Калькулятор тарифов</h1>
         <TariffCalculation></TariffCalculation>
         <button class="button__gold w-[300px] h-10 mx-auto shadow-sm mb-16 hover:shadow-lg transition-all" @click="showModal = true">Купить</button>
-        <h1 class="uppercase mb-6 text-center mx-auto">Ответы на часто задаваемые вопросы</h1>
-        <div class="w-full mb-10">
+        <h1 class="uppercase mb-6 text-center mx-auto" v-if="false">Ответы на часто задаваемые вопросы</h1>
+        <div class="w-full mb-10" v-if="false">
           <div class="mx-auto w-full rounded-2xl bg-white py-2 mb-2">
             <Disclosure v-slot="{ open }">
               <DisclosureButton
@@ -154,7 +173,7 @@ const itServiceInfo = [
             </Disclosure>
           </div>
         </div>
-        <h1 class="mx-auto text-center mb-8 uppercase">Выбрать удобное время для звонка</h1>
+        <h1 class="mx-auto text-center mb-8 uppercase">Давайте организуем встречу в удобное для вас время</h1>
         <div class="mb-16 flex justify-center items-center">
           <iframe src="https://calendly.com/petrashko-mikhail_loyalgift/45min" width="1001" height="700" frameborder="0" id="iframe"></iframe>
         </div>

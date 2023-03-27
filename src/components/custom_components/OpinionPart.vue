@@ -1,20 +1,45 @@
 <template>
-  <div class="flex justify-between items-center mb-10">
-    <img src="@/assets/opinion.png" alt="opinionDesc">
-    <div class="flex flex-col justify-center items-stretch">
-      <h1 class="mb-12 uppercase">Что наши клиенты говорят о нас</h1>
-      <p class="mb-16">Сказать, что отзывы являются мощным инструментом было 
-        бы значительным преуменьшением. Несколько предложений в обзоре порой оказывают большее влияние на потребителей, чем целый сайт. 
-        Разница в одну звезду или даже ползвезды может быть достаточной для того, чтобы покупатель выбрал не вас, а вашего конкурента.
-      </p>
-      <div class="comment flex justify-start items-center">
-        <img src="@/assets/avatar.png" alt="avatar" class="w-20 h-20 mr-6">
-        <div class="flex flex-col justify-evenly items-start">
-          <h3 class="text-base font-bold text-purple">Анастасия Старовойцева</h3>
-          <p>HRD “Очень важная и крупная компания”</p>
-          <img src="@/assets/stars.svg" alt="starsMark" class="h-5">
+  <div>
+    <div class="flex justify-between items-center mb-10">
+      <img src="@/assets/opinion.png" alt="opinionDesc">
+      <div class="flex flex-col justify-center items-stretch">
+        <h1 class="mb-12 uppercase">Что наши клиенты говорят о нас</h1>
+        <div class="mb-4">
+          <h3 class="text-base font-bold text-purple">Взаимодействие между сотрудниками</h3>
+          <p>У нас стояла задача повысить уровень взаимодействия между сотрудниками из разных отделов.  На начальной стадии подключили Loyal.Gift для обмена открытками и нематериальными подарками. Спустя два месяца увидели положительную динамику — сотрудники стали больше взаимодействовать, охотнее откликаются на просьбы коллег из других отделов. Сейчас планируем подключать нематериальные подарки.</p>
+        </div>
+        <div class="mb-4">
+          <h3 class="text-base font-bold text-purple">Работа с удаленными сотрудниками</h3>
+          <p>Наша команда – это 126 человек в 11 городах. Вопрос вовлечения и мотивации удаленных сотрудников стоит остро. Loyal.Gift — крутой инструмент, который помогает нам эффективно и комфортно выстраивать работу с удаленщиками на всех этапах. </p>
+        </div>
+        <div class="comment flex justify-start items-center" v-if="false">
+          <img src="@/assets/avatar.png" alt="avatar" class="w-20 h-20 mr-6">
+          <div class="flex flex-col justify-evenly items-start">
+            <h3 class="text-base font-bold text-purple">Анастасия Старовойцева</h3>
+            <p>HRD “Очень важная и крупная компания”</p>
+            <img src="@/assets/stars.svg" alt="starsMark" class="h-5">
+          </div>
         </div>
       </div>
+    </div>
+    <div class="mb-4">
+      <h3 class="text-base font-bold text-purple">Автоматизация</h3>
+      <p>С Loyal.Gift  мы значительно сократили время и средства на мотивацию сотрудников. Теперь мы контролируем процесс, а не погружены в него с головой. 
+        <br/>
+        Дополнительный бонус – система распределения материальных подарков. Теперь сотрудники самостоятельно определяют подарки в рамках доступных им баллов, а мы видим наиболее востребованные категории и то, что не пользуется популярностью в нашей компании. 
+      </p>
+    </div>
+    <div class="mb-4">
+      <h3 class="text-base font-bold text-purple">Все цепочки мотивации в одном месте</h3>
+      <p>Loyal.Gift  — это удобно. Ребята собрали все цепочки мотивации в одном месте. Это снизило нагрузку на hr и отдел внутренних коммуникаций. </p>
+    </div>
+    <div class="mb-4">
+      <h3 class="text-base font-bold text-purple">Просто и удобно</h3>
+      <p>Все очень просто и интуитивно понятно. Сотрудники быстро адаптировались к Loyal.Gift. Самое важное, что это не просто платформа коммуникации, а можно привязывать бизнес-цели и отслеживать, как активно команда вовлекается в их достижение. </p>
+    </div>
+    <div class="mb-4">
+      <h3 class="text-base font-bold text-purple">Саппорт</h3>
+      <p class="mb-16">Для меня важно, что команда Loyal.Gift всегда на связи. На этапе интеграции ни один запрос не остался без ответа, были учтены наши пожелания. Сейчас если требуется помощь — ребята делятся экспертизой и очень оперативно подключаются к решению возникающих вопросов. </p>
     </div>
   </div>
 </template>

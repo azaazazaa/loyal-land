@@ -1,6 +1,7 @@
 <script setup>
 import { rootUrl } from '@/plugins/getRoutes.js'
 import { ref } from 'vue'
+import ChatComponent from '@/components/custom_components/ChatComponent.vue'
 
 const selectedPage = ref(0)
 
@@ -35,8 +36,9 @@ const pages = ref([
         <img src="@/assets/diamond_white.svg" alt="icon" v-show="selectedPage === 1" class="mr-1 transition-all">
         <img src="@/assets/diamond.svg" alt="icon" v-show="selectedPage !== 1" class="mr-1 transition-all"> Алмазы</button>
     </div>
-    <p class="mx-auto text-center w-[800px] mb-12">Инструмент для управления вертикальными цепочками вознаграждений и распределения корпоративных подарков от руководителя или компании к сотруднику</p>
-    <div>
+    <p class="mx-auto text-center w-[800px] mb-12" v-show="selectedPage === 0">Инструмент для управления вертикальными цепочками вознаграждений и распределения корпоративных подарков от руководителя или компании к сотруднику</p>
+    <p class="mx-auto text-center w-[800px] mb-12" v-show="selectedPage === 1">Инструмент для создания цепочки горизонтального взаимодействия, в которой сотрудники вознаграждают и благодарят друг друга</p>
+    <div class="relative">
       <div class="flex justify-between items-start gap-14 mb-4">
         <div v-for="imgLink, index in pages[selectedPage].imgLinks" :key="`card_${index}`" class="flex-1">
           <img :src="imgLink" :alt="`card_${index}`">
@@ -45,6 +47,25 @@ const pages = ref([
       <div class="flex justify-between items-start gap-14">
         <p class="flex-1 text-center" v-for="desc, index in pages[selectedPage].descContetn" :key="`desc_${index}`">{{ desc }}</p>
       </div>
+      <div class="absolute top-32 -right-10 2xl:-right-24 h-36 flex flex-col justify-between items-stretch">
+          <ChatComponent>
+            <template #img>
+              <img src="@/assets/chatIcon_3.png" alt="chatIcon" class="mr-3 w-12 h-12 rounded-full">
+            </template>
+            <template #text>
+                <p class="font-normal text-sm">Спасибо большое, <br/> мне очень приятно!</p>
+                <img src="@/assets/heartIcon.svg" alt="heartIcon" class="absolute right-4 -top-4">
+            </template>
+          </ChatComponent>
+          <ChatComponent class="relative left-6">
+            <template #img>
+              <img src="@/assets/chatGift.svg" alt="chatIcon" class="mr-3">
+            </template>
+            <template #text>
+                <p class="font-normal text-sm">За этот месяц Вы<br/> поблагодарили 10 коллег</p>
+            </template>
+          </ChatComponent>
+        </div>
     </div>
   </div>
 </template>
