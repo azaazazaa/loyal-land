@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, watch } from 'vue'
-const workersNum = ref(15000)
+const workersNum = ref(20)
 const isShadowFull = ref(false)
 const getPrice = computed(() => {
   if (workersNum.value <= 20) {
@@ -16,12 +16,18 @@ const getPrice = computed(() => {
 })
 
 const getLeftSpacing = computed(() => {
-  /*(590/60000) */
   return (workersNum.value*(590/60000)-22)+'px'
 })
 const getWidth = computed(() => {
+  if ((workersNum.value*(590/60000)-22)+20 < 0) {
+    return 0
+  }
   return (workersNum.value*(590/60000)-22)+20+'px'
 })
+
+/* onMounted(() => {
+  workersNum.value = '20'
+}) */
 
 function showShadowAnim () {
   isShadowFull.value = true

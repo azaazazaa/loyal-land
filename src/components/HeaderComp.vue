@@ -12,16 +12,16 @@
         <li class="mr-5">
           <router-link to="/loyal-land" class="leading-5 hover:border-b-2 hover:border-purple hover:inline-block hover:h-5 transition-all">Для HR</router-link>
         </li>
-        <li class="mr-5">
+        <!-- <li class="mr-5">
           <router-link to="/loyal-land/marketing" class="leading-5 hover:border-b-2 hover:border-purple hover:inline-block hover:h-5 transition-all">Для маркетинга</router-link>
         </li>
         <li class="mr-5">
           <router-link to="/loyal-land/self" class="leading-5 hover:border-b-2 hover:border-purple hover:inline-block hover:h-5 transition-all">Для себя</router-link>
-        </li>
+        </li> -->
       </ul>
     </div>
-    <div>
-      <button class="button h-10 w-72 transition-all"><a href="https://loyal.gift/login">АВТОРИЗОВАТЬСЯ</a></button>
+    <div class="w-72">
+      <!-- <button class="button h-10 w-72 transition-all"><a href="https://loyal.gift/login">АВТОРИЗОВАТЬСЯ</a></button> -->
     </div>
   </header>
 </template>

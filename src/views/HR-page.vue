@@ -1,5 +1,6 @@
 <script setup>
-import {ref} from 'vue'
+import {ref, onMounted } from 'vue'
+import { useWindowScroll } from '@vueuse/core'
 import HeaderComp from "@/components/HeaderComp.vue"
 import RunningLine from "@/components/custom_components/RunningLine.vue"
 import MyModal from '@/components/UI_components/MyModal.vue'
@@ -9,9 +10,9 @@ import CareChangerInfo from '@/components/CareChangerInfo.vue'
 import OpinionPart from '@/components/custom_components/OpinionPart.vue'
 import TariffCalculation from '@/components/TariffCalculation.vue'
 import ChatComponent from '@/components/custom_components/ChatComponent.vue'
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
+import QestionsAnswers from '../components/custom_components/QestionsAnswers.vue'
+import TelegramComp from '../components/TelegramComp.vue'
 import Footer from '@/components/Footer.vue'
-import { ChevronUpIcon } from '@heroicons/vue/20/solid'
 
 const stringContent = ['Служба распределения и доставки', 'It-сервис для смысловых коммуникаций', 'Каталог материальных и виртуальных подарков']
 const showModal = ref(false)
@@ -35,6 +36,13 @@ const itServiceInfo = [
   'text': 'и благодарности',
   'posClass': 'bottom-36 right-12' }
 ]
+
+const scrollHieght = ref(0)
+const { x, y } = useWindowScroll()
+
+onMounted(() => {
+  scrollHieght.value = document.body.scrollHeight
+})
 
 </script>
 
@@ -73,10 +81,21 @@ const itServiceInfo = [
           </ChatComponent>
         </div>
       </div>
+      <teleport to="body">
+        <div class="absolute top-[800px] w-full">
+          <img src="@/assets/garlandLine.svg" alt="" class="w-full object-cover"/>
+          <div class="w-40 h-40 rounded-full bg-red-500 blur-xl absolute left-44 bottom-1 transition-all duration-500"
+          :style="{'bottom' : (-scrollHieght+y + 6100)/30 + 'px'}"></div>
+          <div class="w-40 h-40 rounded-full bg-blue-800 blur-xl absolute left-1/3  -bottom-28 transition-all duration-700"
+          :style="{'bottom' : (-scrollHieght+y + 2120)/40 + 'px'}"></div>
+          <div class="w-40 h-40 rounded-full bg-yellow-500 blur-xl absolute right-48  bottom-4 transition-all duration-1000"
+          :style="{'bottom' : (-scrollHieght+y + 4800)/20 + 'px'}"></div>
+        </div>
+      </teleport>
       <MyModal :isOpen="showModal" @close="() => {showModal = false}"/>
       <div class="flex flex-col justify-start items-stretch">
-        <h1 class="mb-12 mx-auto w-3/5 text-center uppercase">Мы знаем, как влюбить в ваш бренд важных для бизнеса людей</h1>
-        <div class="flex justify-between items-center mb-20">
+        <h1 class="mb-12 mx-auto w-3/5 text-center uppercase z-10">Мы знаем, как влюбить в ваш бренд важных для бизнеса людей</h1>
+        <div class="flex justify-between items-center mb-20 z-10">
           <InfoCard :header="'Сотрудники'" 
                     :imgSrc="rootUrl+'assets/workers.svg'" 
                     :imgLabel="'Выстраиваем коммуникацию'"
@@ -96,7 +115,7 @@ const itServiceInfo = [
         <h1 class="mx-auto w-3/5 text-center">IT - СЕРВИС ДЛЯ СМЫСЛОВЫХ КОММУНИКАЦИЙ </h1>
         <div class="relative w-full">
           <img src="@/assets/communication_big.png" alt="img" class="h-[700px] object-contain mx-auto">
-          <div v-for="comp, ёindex in itServiceInfo" :key="index" class="absolute bg-white rounded-2xl py-3 px-4 w-96" :class="comp['posClass']">
+          <div v-for="comp, index in itServiceInfo" :key="index" class="absolute bg-white rounded-2xl py-3 px-4 w-96" :class="comp['posClass']">
             <p><span class="font-bold">{{comp['bold']}}</span> {{ comp['text'] }}</p>
           </div>
         </div>
@@ -120,65 +139,14 @@ const itServiceInfo = [
         <TariffCalculation></TariffCalculation>
         <button class="button__gold w-[300px] h-10 mx-auto shadow-sm mb-16 hover:shadow-lg transition-all" @click="showModal = true">Купить</button>
         <h1 class="uppercase mb-6 text-center mx-auto" v-if="false">Ответы на часто задаваемые вопросы</h1>
-        <div class="w-full mb-10" v-if="false">
-          <div class="mx-auto w-full rounded-2xl bg-white py-2 mb-2">
-            <Disclosure v-slot="{ open }">
-              <DisclosureButton
-                class="flex w-full justify-between rounded-lg bg-purple-100 px-12 py-2 text-left text-purple text-2xl font-semibold hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
-              >
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
-                <ChevronUpIcon
-                  :class="open ? 'rotate-180 transform' : ''"
-                  class="h-5 w-5 text-purple-500 transition-all"
-                />
-              </DisclosureButton>
-              <transition
-                enter-active-class="transition duration-100 ease-out"
-                enter-from-class="transform scale-95 opacity-0"
-                enter-to-class="transform scale-100 opacity-100"
-                leave-active-class="transition duration-75 ease-out"
-                leave-from-class="transform scale-100 opacity-100"
-                leave-to-class="transform scale-95 opacity-0"
-              >
-                <DisclosurePanel class="px-12 pt-4 pb-2 text-base text-purple">
-                  If you're unhappy with your purchase for any reason, email us within
-                  90 days and we'll refund you in full, no questions asked.
-                </DisclosurePanel>
-              </transition>
-            </Disclosure>
-          </div>
-          <div class="mx-auto w-full rounded-2xl bg-white py-2 mb-2 transition-all">
-            <Disclosure as="div" v-slot="{ open }">
-              <DisclosureButton
-                class="flex w-full justify-between rounded-lg bg-purple-100 px-12 py-2 text-left text-purple text-2xl font-semibold hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
-              >
-                <span>Do you offer technical support?</span>
-                <ChevronUpIcon
-                  :class="open ? 'rotate-180 transform' : ''"
-                  class="h-5 w-5 text-purple text-2xl font-semibold transition-all"
-                />
-              </DisclosureButton>
-              <transition
-                enter-active-class="transition duration-100 ease-out"
-                enter-from-class="transform scale-95 opacity-0"
-                enter-to-class="transform scale-100 opacity-100"
-                leave-active-class="transition duration-75 ease-out"
-                leave-from-class="transform scale-100 opacity-100"
-                leave-to-class="transform scale-95 opacity-0"
-              >
-                <DisclosurePanel class="px-12 pt-4 pb-2 text-base text-purple">
-                  No.
-                </DisclosurePanel>
-              </transition>
-            </Disclosure>
-          </div>
-        </div>
+        <QestionsAnswers></QestionsAnswers>
         <h1 class="mx-auto text-center mb-8 uppercase">Давайте организуем встречу в удобное для вас время</h1>
         <div class="mb-16 flex justify-center items-center">
           <iframe src="https://calendly.com/petrashko-mikhail_loyalgift/45min" width="1001" height="700" frameborder="0" id="iframe"></iframe>
         </div>
       </div>
     </div>
+    <TelegramComp></TelegramComp>
     <Footer @openModal="() => {showModal = true}"></Footer>
   </div>
 </template>
@@ -187,8 +155,7 @@ const itServiceInfo = [
 import { rootUrl } from '@/plugins/getRoutes.js'
 
 export default {
-    name: "HR-page",
-    components: { InfoCard }
+    name: "HR-page"
 }
 </script>
 

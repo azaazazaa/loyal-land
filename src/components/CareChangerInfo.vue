@@ -27,14 +27,17 @@ const pages = ref([
 <template>
   <div class="mb-12">
     <div class="w-[420px] flex h-10 justify-between items-center mx-auto mb-8">
-      <button class="button__tsar rounded-full h-10 justify-center border-purple border-[3px] w-44 transition-all hover:shadow-lg" :class="{'!border-pink bg-pink text-white hover:drop-shadow' : selectedPage === 0}" @click="selectedPage = 0">
-        <img src="@/assets/gift_purpleVector.svg" alt="iconGift" v-show="selectedPage !== 0" class="mr-2 transition-all"> 
-        <img src="@/assets/gift_whiteVector.svg" alt="iconGift" v-show="selectedPage === 0" class="mr-2 transition-all"> Подарки</button>
-      <button class="button__tsar rounded-full h-10 justify-center border-purple border-[3px] w-44 transition-all hover:shadow-lg" 
-              :class="{'!border-pink bg-pink text-white hover:drop-shadow' : selectedPage === 1}"
+      <button class="button__tsar rounded-full h-10 justify-center border-purple border-[3px] w-44 transition-all hover:shadow-lg 
+      hover:!border-pink hover:bg-pink hover:text-white" 
+              :class="{'!border-pink bg-pink text-white' : selectedPage === 0}" @click="selectedPage = 0">
+        <img src="@/assets/gift_purpleVector.svg" alt="iconGift" v-show="selectedPage !== 0" class="mr-2 transition-all hoverDisapear"> 
+        <img src="@/assets/gift_whiteVector.svg" alt="iconGift" v-show="selectedPage === 0" class="mr-2 transition-all hoverApear"> Подарки</button>
+      <button class="button__tsar rounded-full h-10 justify-center border-purple border-[3px] w-44 transition-all hover:shadow-lg
+                   hover:!border-pink hover:bg-pink hover:text-white" 
+              :class="{'!border-pink bg-pink text-white hover:drop-shadow hoverDisapear' : selectedPage === 1}"
               @click="selectedPage = 1">
-        <img src="@/assets/diamond_white.svg" alt="icon" v-show="selectedPage === 1" class="mr-1 transition-all">
-        <img src="@/assets/diamond.svg" alt="icon" v-show="selectedPage !== 1" class="mr-1 transition-all"> Алмазы</button>
+        <img src="@/assets/diamond_white.svg" alt="icon" v-show="selectedPage === 1" class="mr-1 transition-all hoverApear">
+        <img src="@/assets/diamond.svg" alt="icon" v-show="selectedPage !== 1" class="mr-1 transition-all hoverDisapear"> Алмазы</button>
     </div>
     <p class="mx-auto text-center w-[800px] mb-12" v-show="selectedPage === 0">Инструмент для управления вертикальными цепочками вознаграждений и распределения корпоративных подарков от руководителя или компании к сотруднику</p>
     <p class="mx-auto text-center w-[800px] mb-12" v-show="selectedPage === 1">Инструмент для создания цепочки горизонтального взаимодействия, в которой сотрудники вознаграждают и благодарят друг друга</p>
@@ -74,6 +77,11 @@ export default {
   name: "CareChangerInfo"
 }
 </script>
-<style lang="">
-  
+<style>
+  .button__tsar:hover > .hoverDisapear{
+    display: none;
+  }
+  .button__tsar:hover > .hoverApear{
+    display: block !important;
+  }
 </style>
