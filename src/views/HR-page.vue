@@ -48,8 +48,9 @@ onMounted(() => {
 
 <template>
   <div class="bg-[#F3EDED]">
-    <HeaderComp></HeaderComp>
-    <div class="container mx-auto px-0 xl:px-10 2xl:px-36">
+    <img src="@/assets/loyal_gift.svg" alt="LoyalGift" class="relative top-5 left-10">
+    <!-- <HeaderComp></HeaderComp> -->
+    <div class="container mx-auto px-0 xl:px-10 2xl:px-36 mt-10">
       <div class="flex justify-center items-center relative mb-20">
         <div class="flex flex-col justify-start items-start">
           <h1 class="mb-4">
@@ -82,13 +83,13 @@ onMounted(() => {
         </div>
       </div>
       <teleport to="body">
-        <div class="absolute top-[800px] w-full">
+        <div class="absolute top-[880px] w-full">
           <img src="@/assets/garlandLine.svg" alt="" class="w-full object-cover"/>
-          <div class="w-40 h-40 rounded-full bg-red-500 blur-xl absolute left-44 bottom-1 transition-all duration-500"
+          <div class="w-40 h-40 rounded-full bg-[#6750A4] blur-xl absolute left-44 bottom-1 transition-all duration-500"
           :style="{'bottom' : (-scrollHieght+y + 6100)/30 + 'px'}"></div>
-          <div class="w-40 h-40 rounded-full bg-blue-800 blur-xl absolute left-1/3  -bottom-28 transition-all duration-700"
+          <div class="w-40 h-40 rounded-full bg-[#FF7475] blur-xl absolute left-1/3  -bottom-28 transition-all duration-700"
           :style="{'bottom' : (-scrollHieght+y + 2120)/40 + 'px'}"></div>
-          <div class="w-40 h-40 rounded-full bg-yellow-500 blur-xl absolute right-48  bottom-4 transition-all duration-1000"
+          <div class="w-40 h-40 rounded-full bg-[#FEB100] blur-xl absolute right-48  bottom-4 transition-all duration-1000"
           :style="{'bottom' : (-scrollHieght+y + 4800)/20 + 'px'}"></div>
         </div>
       </teleport>
@@ -134,7 +135,7 @@ onMounted(() => {
         </div>
         <h1 class="mb-10 mx-auto text-center uppercase">Почему мы и Как это работает?</h1>
         <CareChangerInfo></CareChangerInfo>
-        <OpinionPart></OpinionPart>
+        <OpinionPart v-if="false"></OpinionPart>
         <h1 class="mb-10 mx-auto text-center uppercase">Калькулятор тарифов</h1>
         <TariffCalculation></TariffCalculation>
         <button class="button__gold w-[300px] h-10 mx-auto shadow-sm mb-16 hover:shadow-lg transition-all" @click="showModal = true">Купить</button>

@@ -1,10 +1,9 @@
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
-import { ChevronUpIcon } from '@heroicons/vue/20/solid'
 </script>
 
 <template>
-  <div class="w-full mb-10">
+  <div class="w-full mb-16">
     <div class="mx-auto w-full rounded-2xl bg-white py-2 mb-2 transition-all shadow-md hover:-translate-y-[2px]">
       <Disclosure v-slot="{ open }">
         <DisclosureButton
