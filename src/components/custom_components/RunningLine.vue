@@ -37,7 +37,7 @@ onMounted(() => {
 </script>
 
 <template>
-<p class="h-16 w-[320px] mb-6 text-2xl font-normal">
+<p class="xl:h-16 h-9 xl:w-[320px] w-[237px] mb-6 xl:text-2xl text-sm font-normal">
   {{runningString}}
 </p>
 </template>

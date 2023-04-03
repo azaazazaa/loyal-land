@@ -6,10 +6,10 @@
         font-family: 'Montserrat', sans-serif;
     }
     p {
-        @apply text-base font-normal text-purple
+        @apply xl:text-base text-xs font-normal text-purple
     }
     h1 {
-        @apply text-big text-purple font-bold
+        @apply xl:text-big text-purple font-bold text-xl
     }
     input {
         @apply border-[#B8B8B8] border rounded-lg px-2 py-3 outline-none text-base
@@ -20,7 +20,7 @@
 }
 @layer components {
     .button {
-        @apply border-2 border-pink text-pink rounded-full text-lg outline-none
+        @apply border-2 border-pink text-pink rounded-full xl:text-lg text-[8px] outline-none
     }
     .button:hover {
         @apply text-white bg-pink 
@@ -29,16 +29,16 @@
         @apply h-10 w-72 text-white rounded-full text-lg bg-purple outline-none
     }
     .button__tsar {
-      @apply text-purple rounded-full text-lg font-semibold outline-none flex justify-start items-center h-14 w-full
+      @apply text-purple rounded-full xl:text-lg text-xs font-semibold outline-none flex justify-start items-center xl:h-14 h-9 w-full
     }
     .button__tsar.active {
       @apply bg-purple text-white
     }
     .button__gold {
       background: linear-gradient(101.76deg, rgba(254, 177, 0, 0.8) 52.05%, rgba(255, 255, 255, 0) 61.44%), #FEB100;
-      @apply h-10 w-full text-white rounded-full text-lg font-bold outline-none
+      @apply xl:h-10 h-5 w-full text-white rounded-full xl:text-lg text-[10px] font-bold outline-none
     }
     .button__white {
-      @apply h-10 w-full text-gold rounded-full text-lg font-bold outline-none bg-white shadow-sm
+      @apply h-10 w-full text-gold rounded-full xl:text-lg text-[10px] font-bold outline-none bg-white shadow-sm
     }
 }

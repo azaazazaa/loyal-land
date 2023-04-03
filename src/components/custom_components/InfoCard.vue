@@ -1,5 +1,5 @@
 <script setup>
-const {header, imgSrc, imgLabel, mainImg, mainContent} = defineProps({
+const {header, imgSrc, imgLabel, mainImg, mainContent, isPositionRight} = defineProps({
   header: {
     type: String,
     default: ''
@@ -19,26 +19,30 @@ const {header, imgSrc, imgLabel, mainImg, mainContent} = defineProps({
   mainContent: {
     type: Array,
     default: []
+  },
+  isPositionRight: {
+    type: Boolean,
+    default: false
   }
 })
 
 </script>
 <template>
-  <div class="flex flex-col items-center w-[296px] rounded-3xl shadow-lg">
+  <div class="flex flex-col items-center lg:w-[296px] w-[148px] rounded-3xl shadow-lg" :class="{'self-end' : isPositionRight}">
     <div class="bg-white px-4 rounded-t-3xl w-full">
-      <div class="flex justify-center items-center h-32">
-        <img :src="imgSrc" alt="icon" class="mr-6">
-        <h3 class="text-[28px] text-purple">{{ header }}</h3>
+      <div class="flex justify-center items-center lg:h-32 h-14">
+        <img :src="imgSrc" alt="icon" class="lg:mr-6 mr-3 lg:w-full w-6  object-cover">
+        <h3 class="lg:text-[28px] text-purple text-sm">{{ header }}</h3>
       </div>
-      <div class="h-28 flex justify-center items-center">
-        <img :src="mainImg" alt="meeting" class="absolute z-0">
-        <h3 class="text-[22px] text-white font-bold z-10 text-center">{{ imgLabel }}</h3>
+      <div class="lg:h-28 h-12 flex justify-center items-center">
+        <img :src="mainImg" alt="meeting" class="z-0 absolute lg:w-auto w-[158px]">
+        <h3 class="lg:text-[22px] text-white font-bold z-10 text-center text-xs">{{ imgLabel }}</h3>
       </div>
     </div>
-    <div class="flex flex-col items-stretch justify-evenly h-40 background px-4 rounded-b-3xl w-full">
+    <div class="flex flex-col items-stretch justify-evenly lg:h-40 h-24 background px-4 rounded-b-3xl w-full">
       <span v-for="string, index in mainContent" 
             :key="index" 
-            class="text-center text-purple text-base font-medium">
+            class="text-center text-purple lg:text-base font-medium text-[10px]">
             {{string}}</span>
     </div>
   </div>

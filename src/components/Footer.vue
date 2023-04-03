@@ -3,10 +3,10 @@ import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 </script>
 
 <template>
-  <footer class="bg-purple h-[152px] flex justify-center items-center px-36">
+  <footer class="bg-purple xl:h-[152px] h-20 flex justify-center items-center xl:px-36 px-10">
     <ul class="container flex justify-between items-center">
       <Popover class="relative">
-        <PopoverButton class="text-lg uppercase text-white">Конаткты</PopoverButton>
+        <PopoverButton class="xl:text-lg sm:text-[8px] text-[6px] uppercase text-white">Конаткты</PopoverButton>
         <transition
             enter-active-class="transition duration-200 ease-out"
             enter-from-class="translate-y-1 opacity-0"
@@ -34,10 +34,10 @@ import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
         </PopoverPanel>
         </transition>
       </Popover>
-      <li><a class="text-lg uppercase text-white hover:cursor-pointer" @click="$emit('openModal')">Обратная связь</a></li>
-      <li><a class="text-lg uppercase text-white" href="http://loyalgift.ru/page27809283.html" target="_blank">Соглашение</a></li>
-      <li><a class="text-lg uppercase text-white" href="https://loyalgift.tilda.ws/policy" target="_blank">Политика конфинденциальности</a></li>
-      <li><a class="text-lg uppercase text-white" href="#">(С) loyalgift 2023</a></li>
+      <li><a class="xl:text-lg sm:text-[8px] text-[6px] uppercase text-white hover:cursor-pointer" @click="$emit('openModal')">Обратная связь</a></li>
+      <li><a class="xl:text-lg sm:text-[8px] text-[6px] uppercase text-white" href="http://loyalgift.ru/page27809283.html" target="_blank">Соглашение</a></li>
+      <li><a class="xl:text-lg sm:text-[8px] text-[6px] uppercase text-white" href="https://loyalgift.tilda.ws/policy" target="_blank">Политика конфинденциальности</a></li>
+      <li><a class="xl:text-lg sm:text-[8px] text-[6px] uppercase text-white" href="#">(С) loyalgift 2023</a></li>
     </ul>
   </footer>
 </template>

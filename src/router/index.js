@@ -4,6 +4,6 @@ import { createRouter, createWebHistory } from "vue-router";
 export default createRouter({
     history: createWebHistory(),
     routes: [
-        {path: '/loyal-land/', name: 'Home', component: Home}
+        {path: '/', name: 'Home', component: Home}
     ]
 })
