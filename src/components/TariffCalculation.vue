@@ -83,11 +83,11 @@ watch(workersNum, (newVal, oldVal) => {
         v-model="workersNum"/>
     </div>
     <div class="flex justify-center items-center w-full">
-      <input type="number" min="0" step="1" max="60000" class="border-none text-center w-32 
+      <input type="number" min="0" step="1" max="60000" class="border-none text-center xl:w-32 w-20 
              underline text-purple xl:text-3xl text-xl font-medium p-0 relative xl:left-5" v-model="workersNum">
-      <div class="xl:flex justify-around h-9 w-5 flex-col items-center relative z-10 left-1 bg-white hidden">
-        <img src="@/assets/topArrowSm.svg" alt="topIcon">
-        <img src="@/assets/topArrowSm.svg" alt="bottomIcon" class="rotate-180">
+      <div class="flex justify-around xl:h-9 h-6 xl:w-5 w-3 flex-col items-center relative z-10 left-1 bg-white">
+        <img src="@/assets/topArrowSm.svg" alt="topIcon" class="xl:w-auto xl:h-auto w-2 h-2">
+        <img src="@/assets/topArrowSm.svg" alt="bottomIcon" class="xl:w-auto xl:h-auto h-2 w-2 rotate-180">
       </div>
     </div>
     <h3 class="text-purple xl:text-2xl text-sm mx-auto text-center mb-3 xl:mb-6">сотрудников</h3>

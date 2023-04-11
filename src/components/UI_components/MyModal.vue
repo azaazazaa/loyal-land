@@ -166,12 +166,16 @@ const isFormValid = computed(() => {
                   <textarea class="input h-56 rounded-xl mt-4 mb-4" v-model="formData.comment"
                             placeholder="Комментарий (например, когда Вам было бы удобно провести встречу)"></textarea>
                             <span class="text-red-500 text-sm">{{ submitError }}</span>
-                  <input
+                  <div class="flex justify-center items-center gap-2">
+                    <button class="button sm:w-72 w-40 h-10 mt-4 mx-auto flex justify-center leading-9 
+                                   hover:cursor-pointer md:hidden" @click="closeModal()">Назад</button>
+                    <input
                       type="submit"
-                      class="button__purple mt-4 mx-auto flex justify-center leading-4 hover:cursor-pointer"
+                      class="button__purple sm:w-72 w-40 mt-4 mx-auto flex justify-center leading-4 hover:cursor-pointer"
                       value="Отправить"
                       :disabled="isFormValid"
-                  />
+                    />
+                  </div>
                 </form>
               </div>
               <div class="success py-4" v-show="isSendingSuccess">

@@ -1,18 +1,10 @@
 <script setup>
-const {header, imgSrc, imgLabel, mainImg, mainContent, isPositionRight} = defineProps({
+const {header, imgLabel, mainContent, isPositionRight} = defineProps({
   header: {
     type: String,
     default: ''
   },
-  imgSrc: {
-    type: String,
-    default: ''
-  },
   imgLabel: {
-    type: String,
-    default: ''
-  },
-  mainImg: {
     type: String,
     default: ''
   },
@@ -31,11 +23,11 @@ const {header, imgSrc, imgLabel, mainImg, mainContent, isPositionRight} = define
   <div class="flex flex-col items-center lg:w-[296px] w-[148px] rounded-3xl shadow-lg" :class="{'self-end' : isPositionRight}">
     <div class="bg-white px-4 rounded-t-3xl w-full">
       <div class="flex justify-center items-center lg:h-32 h-14">
-        <img :src="imgSrc" alt="icon" class="lg:mr-6 mr-3 lg:w-full w-6  object-cover">
+        <slot name="imgIcon"></slot>
         <h3 class="lg:text-[28px] text-purple text-sm">{{ header }}</h3>
       </div>
       <div class="lg:h-28 h-12 flex justify-center items-center">
-        <img :src="mainImg" alt="meeting" class="z-0 absolute lg:w-auto w-[158px]">
+        <slot name="mainImg"></slot>
         <h3 class="lg:text-[22px] text-white font-bold z-10 text-center text-xs">{{ imgLabel }}</h3>
       </div>
     </div>
@@ -54,6 +46,11 @@ export default {
 </script>
 <style>
   .background{
-    background:rgba(255,255,255, 0.2);
+    background:rgba(255,255,255, 0.5);
+  }
+  @media only screen and (max-width: 1024px) {
+    .background{
+      background:rgba(255,255,255, 0.9);
+    }
   }
 </style>

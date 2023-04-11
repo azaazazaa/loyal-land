@@ -1,7 +1,11 @@
 <script setup>
 import { rootUrl } from '@/plugins/getRoutes.js'
-import { ref, onMounted } from 'vue'
+import { ref, computed } from 'vue'
 import ChatComponent from '@/components/custom_components/ChatComponent.vue'
+import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel'
+
+import 'vue3-carousel/dist/carousel.css'
+
 
 const selectedPage = ref(0)
 
@@ -23,17 +27,12 @@ const pages = ref([
   ]
   }])
 
-const sliderBlockIndex = ref(0)
+/* const myCarousel = ref({data: {currentSlide: 0}})
 
-onMounted(() => {
-  setInterval(() => {
-    if(sliderBlockIndex.value === 2) {
-      sliderBlockIndex.value = 0
-    } else {
-      ++sliderBlockIndex.value
-    }
-  }, 5000)
-})
+const indexCurrentZero = computed(() => {
+  console.debug(myCarousel.value.data.currentSlide)
+  return myCarousel.value.data.currentSlide === 0
+}) */
 
 </script>
 <template>
@@ -55,14 +54,40 @@ onMounted(() => {
     <p class="mx-auto text-center w-full mb-4" v-show="selectedPage === 1">Инструмент для создания цепочки горизонтального взаимодействия, в которой сотрудники вознаграждают и благодарят друг друга</p>
     <div class="relative xl:hidden">
       <div class="flex justify-center items-start gap-14 mb-4">
-        <div class="flex-1 xl:justify-start justify-center flex">
+        <Carousel>
+          <Slide v-for="indexBlock in 3" :key="indexBlock">
+            <div class="relative">
+              <div class="flex-1 xl:justify-start justify-center flex">
+                <img :src="pages[selectedPage].imgLinks[indexBlock-1]" class="w-56" :alt="`card_${indexBlock-1}`">
+              </div>
+              <div class="flex justify-center items-start mb-4">
+                <p class="flex-1 text-center">{{ pages[selectedPage].descContetn[indexBlock-1] }}</p>
+              </div>
+            </div>
+          </Slide>
+
+          <template #addons>
+            <Pagination/>
+          </template>
+        </Carousel>
+        <!-- <div class="pult mx-auto w-16 flex justify-center items-center">
+          <div class="w-[10px] h-[10px] min-w-[10px] rounded-full bg-[#D9D9D9] mr-4 hover:cursor-pointer transition-all"
+              :class="{'!bg-purple': indexCurrentZero === 0}"></div>
+              {{ indexCurrentZero }}
+              {{ myCarousel.data.currentSlide }}
+          <div class="w-[10px] h-[10px] min-w-[10px] rounded-full bg-[#D9D9D9] mr-4 hover:cursor-pointer transition-all"
+              :class="{'!bg-purple': myCarousel.data.currentSlide === 1}"></div>
+          <div class="w-[10px] h-[10px] min-w-[10px] rounded-full bg-[#D9D9D9] mr-4 hover:cursor-pointer transition-all"
+              :class="{'!bg-purple': myCarousel.data.currentSlide === 2}"></div>
+        </div> -->
+        <!-- <div class="flex-1 xl:justify-start justify-center flex">
           <img :src="pages[selectedPage].imgLinks[sliderBlockIndex]" class="w-56" :alt="`card_${sliderBlockIndex}`">
-        </div>
+        </div> -->
       </div>
-      <div class="flex justify-center items-start mb-4">
+      <!-- <div class="flex justify-center items-start mb-4">
         <p class="flex-1 text-center">{{ pages[selectedPage].descContetn[sliderBlockIndex] }}</p>
-      </div>
-      <div class="pult mx-auto w-16 flex justify-center items-center">
+      </div> -->
+      <!-- <div class="pult mx-auto w-16 flex justify-center items-center">
         <div class="w-[10px] h-[10px] min-w-[10px] rounded-full bg-[#D9D9D9] mr-4 hover:cursor-pointer transition-all"
              @click="() => {sliderBlockIndex = 0}"
              :class="{'!bg-purple': sliderBlockIndex === 0}"></div>
@@ -72,7 +97,7 @@ onMounted(() => {
         <div class="w-[10px] h-[10px] min-w-[10px] rounded-full bg-[#D9D9D9] mr-4 hover:cursor-pointer transition-all"
              @click="() => {sliderBlockIndex = 2}"
              :class="{'!bg-purple': sliderBlockIndex === 2}"></div>
-      </div>
+      </div> -->
     </div>
     <div class="relative hidden xl:block">
       <div class="flex justify-between items-start gap-14 mb-4">
@@ -116,5 +141,17 @@ export default {
   }
   .button__tsar:hover > .hoverApear{
     display: block !important;
+  }
+  .carousel__pagination-button::after{
+    background-color: #D9D9D9;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+  }
+  .carousel__pagination-button--active::after{
+    background-color: #6750A4!important;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
   }
 </style>

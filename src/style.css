@@ -20,7 +20,7 @@
 }
 @layer components {
     .button {
-        @apply border-2 border-pink text-pink rounded-full xl:text-lg text-[8px] outline-none
+        @apply border-2 border-pink text-pink rounded-full text-lg outline-none
     }
     .button:hover {
         @apply text-white bg-pink 
@@ -36,7 +36,7 @@
     }
     .button__gold {
       background: linear-gradient(101.76deg, rgba(254, 177, 0, 0.8) 52.05%, rgba(255, 255, 255, 0) 61.44%), #FEB100;
-      @apply xl:h-10 h-5 w-full text-white rounded-full xl:text-lg text-[10px] font-bold outline-none
+      @apply xl:h-10 h-8 w-full text-white rounded-full xl:text-lg text-xs font-bold outline-none
     }
     .button__white {
       @apply h-10 w-full text-gold rounded-full xl:text-lg text-[10px] font-bold outline-none bg-white shadow-sm

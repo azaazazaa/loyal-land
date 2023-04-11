@@ -126,9 +126,9 @@ import { ref } from 'vue'
 
 <template>
   <div class="flex items-center justify-center xl:justify-start xl:h-[418px] h-[290px]">
-    <div class="btn_wrapper xl:w-[315px] w-[208px] mr-8 flex flex-col justify-between items-stretch">
-      <div class="xl:w-[315px] w-[208px]">
-        <button class="button__tsar xl:mb-7 mb-3 hover:!bg-pink_light hover:text-white transition-all select-none" 
+    <div class="btn_wrapper xl:w-[315px] lg:w-[278px] md:w-[208px] w-[168px] mr-8 flex flex-col justify-between items-stretch">
+      <div class="xl:w-[315px] lg:w-[278px] md:w-[208px] w-[168px]">
+        <button class="button__tsar text-left xl:mb-7 mb-3 hover:!bg-pink_light hover:text-white transition-all select-none" 
                 v-for="page, index in pages" :key="index"
                 :class="{'active' : page.isOpen}"
                 @click="openningPage(index)">
@@ -136,7 +136,8 @@ import { ref } from 'vue'
           {{page.btnLabel}}
         </button>
       </div>
-      <button class="button__gold xl:w-[315px] w-[208px] transition-all hover:drop-shadow select-none" @click="$emit('openModal')">Хочу попробовать</button>
+      <button class="button__gold xl:w-[315px] lg:w-[278px] md:w-[208px] w-[168px] transition-all hover:drop-shadow select-none" 
+              @click="$emit('openModal')">Хочу попробовать</button>
       <!-- <button class="button__gold w-[315px] transition-all hover:drop-shadow" @click="$emit('openModal')">Свяжитесь со мной</button> -->
     </div>
     <div class="cards_wrapper gap-2 justify-between items-stretch xl:h-full xl:flex hidden">
@@ -150,11 +151,11 @@ import { ref } from 'vue'
         </div>
       </div>
     </div>
-    <div class="cards_wrapper flex-col gap-2 justify-between items-center xl:h-full xl:hidden flex max-w-[200px]">
+    <div class="cards_wrapper flex-col gap-2 justify-between items-center xl:h-full xl:hidden flex max-w-[150px] xl:max-w-[200px] w-1/2 min-w-[150px]">
       <div class="card w-auto xl:h-full flex-1 flex flex-col items-stretch">
         <img :src="getImageUrl(cardsContetn[currentIndex][sliderIndex].imgSrc)" alt="img" class="rounded-t-2xl" :class="{'bg-[#21252D]' : cardsContetn[currentIndex][sliderIndex].headerLabel === 'Будущее наступило'}">
         <div class="bg-white flex-col justify-around 
-                  items-stretch xl:h-full pb-5 px-5 pt-5 box-content rounded-b-2xl shadow-lg ">
+                  items-stretch xl:h-full pb-5 px-5 pt-5 box-content rounded-b-2xl shadow-lg h-24">
           <h3 class="text-purple text-center uppercase font-bold text-xs mb-2 select-none">{{ cardsContetn[currentIndex][sliderIndex].headerLabel }}</h3>
           <p class="xl:h-full text-[5px] leading-[9px] font-medium text-center select-none">{{ cardsContetn[currentIndex][sliderIndex].description }}</p>
         </div>
