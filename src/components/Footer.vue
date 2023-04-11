@@ -18,7 +18,7 @@ import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
         <PopoverPanel class="absolute z-10 left-1/2 mt-3 -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl bottom-8 bg-pink w-52 rounded-lg">
           <div class="pl-2 pt-2">
             <div class="flex justify-start items-center mb-2 hover:cursor-pointer hover:bg-pink_light pl-2 mr-2 py-2 rounded-md">
-              <img src="@/assets/telIcon.svg" alt="icon" class="mr-2">
+              <img src="@/vendor/landing/assets/telIcon.svg" alt="icon" class="mr-2">
               <a href="tel:+74994509095" class="text-base font-normal text-white">+74994509095</a>
             </div>
             <div class="flex justify-start items-center mb-2 hover:cursor-pointer hover:bg-pink_light pl-2 mr-2 py-2 rounded-md">

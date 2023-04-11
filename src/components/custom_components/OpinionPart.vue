@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex justify-between items-center mb-10">
-      <img src="@/assets/opinion.png" alt="opinionDesc">
+      <img src="@/vendor/landing/assets/opinion.png" alt="opinionDesc">
       <div class="flex flex-col justify-center items-stretch">
         <h1 class="mb-12 uppercase">Что наши клиенты говорят о нас</h1>
         <div class="mb-4">
@@ -13,11 +13,11 @@
           <p>Наша команда – это 126 человек в 11 городах. Вопрос вовлечения и мотивации удаленных сотрудников стоит остро. Loyal.Gift — крутой инструмент, который помогает нам эффективно и комфортно выстраивать работу с удаленщиками на всех этапах. </p>
         </div>
         <div class="comment flex justify-start items-center" v-if="false">
-          <img src="@/assets/avatar.png" alt="avatar" class="w-20 h-20 mr-6">
+          <img src="@/vendor/landing/assets/avatar.png" alt="avatar" class="w-20 h-20 mr-6">
           <div class="flex flex-col justify-evenly items-start">
             <h3 class="text-base font-bold text-purple">Анастасия Старовойцева</h3>
             <p>HRD “Очень важная и крупная компания”</p>
-            <img src="@/assets/stars.svg" alt="starsMark" class="h-5">
+            <img src="@/vendor/landing/assets/stars.svg" alt="starsMark" class="h-5">
           </div>
         </div>
       </div>

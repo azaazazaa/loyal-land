@@ -10,7 +10,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
           class="flex w-full justify-between items-center rounded-lg bg-purple-100 xl:px-12 px-3 xl:py-2 py-1 text-left text-purple xl:text-2xl text-xs font-semibold hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
         >
           <span>Что такое Loyal.Gift?</span>
-          <img src="@/assets/triangelTop.svg" alt="svg" class="transition-all w-[6px] h-[6px] xl:w-auto xl:h-auto" :class="open ? 'rotate-180 transform' : ''">
+          <img src="@/vendor/landing/assets/triangelTop.svg" alt="svg" class="transition-all w-[6px] h-[6px] xl:w-auto xl:h-auto" :class="open ? 'rotate-180 transform' : ''">
         </DisclosureButton>
         <transition
           enter-active-class="transition duration-100 ease-out"
@@ -38,7 +38,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
           class="flex w-full justify-between items-center rounded-lg bg-purple-100 xl:px-12 px-3 py-2 text-left text-purple xl:text-2xl text-xs font-semibold hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
         >
           <span>Сколько времени занимает внедрение Loyal.Gift?</span>
-          <img src="@/assets/triangelTop.svg" alt="svg" class="transition-all w-[6px] h-[6px] xl:w-auto xl:h-auto" :class="open ? 'rotate-180 transform' : ''">
+          <img src="@/vendor/landing/assets/triangelTop.svg" alt="svg" class="transition-all w-[6px] h-[6px] xl:w-auto xl:h-auto" :class="open ? 'rotate-180 transform' : ''">
         </DisclosureButton>
         <transition
           enter-active-class="transition duration-100 ease-out"
@@ -60,7 +60,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
           class="flex w-full justify-between items-center rounded-lg bg-purple-100 xl:px-12 px-3 py-2 text-left text-purple xl:text-2xl text-xs font-semibold hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
         >
           <span>Для каких сфер подходит сервис Loyal.Gift?</span>
-          <img src="@/assets/triangelTop.svg" alt="svg" class="transition-all w-[6px] h-[6px] xl:w-auto xl:h-auto" :class="open ? 'rotate-180 transform' : ''">
+          <img src="@/vendor/landing/assets/triangelTop.svg" alt="svg" class="transition-all w-[6px] h-[6px] xl:w-auto xl:h-auto" :class="open ? 'rotate-180 transform' : ''">
         </DisclosureButton>
         <transition
           enter-active-class="transition duration-100 ease-out"
@@ -82,7 +82,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
           class="flex w-full justify-between items-center rounded-lg bg-purple-100 xl:px-12 px-3 py-2 text-left text-purple xl:text-2xl text-xs font-semibold hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
         >
           <span>Сколько людей нужно, чтобы управлять сервисом?</span>
-          <img src="@/assets/triangelTop.svg" alt="svg" class="transition-all w-[6px] h-[6px] xl:w-auto xl:h-auto" :class="open ? 'rotate-180 transform' : ''">
+          <img src="@/vendor/landing/assets/triangelTop.svg" alt="svg" class="transition-all w-[6px] h-[6px] xl:w-auto xl:h-auto" :class="open ? 'rotate-180 transform' : ''">
         </DisclosureButton>
         <transition
           enter-active-class="transition duration-100 ease-out"

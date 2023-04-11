@@ -7,7 +7,7 @@ const selectedPage = ref(0)
 
 const pages = ref([
   {
-  imgLinks: [rootUrl+'assets/card1.png', rootUrl+'assets/card2.png', rootUrl+'assets/card3.png'],
+  imgLinks: [rootUrl+'vendor/landing/assets/card1.png', rootUrl+'vendor/landing/assets/card2.png', rootUrl+'vendor/landing/assets/card3.png'],
   descContetn: [
     'Настраивайте коммуникации под разные поводы в форме игровой карточки', 
     'Выберите адресатов, виртуальную открытку под нужный повод, подарок или вознаграждение, прикрепите опрос и установите дату отправки', 
@@ -15,7 +15,7 @@ const pages = ref([
   ]
   },
   {
-  imgLinks: [rootUrl+'assets/card2_1.png', rootUrl+'assets/card2_2.png', rootUrl+'assets/card2_3.png'],
+  imgLinks: [rootUrl+'vendor/landing/assets/card2_1.png', rootUrl+'vendor/landing/assets/card2_2.png', rootUrl+'vendor/landing/assets/card2_3.png'],
   descContetn: [
     'Сотрудник выбирает кого и за что хочет поблагодарить', 
     'Определяет количество алмазов, которые он отправит в качестве благодарности', 
@@ -42,14 +42,14 @@ onMounted(() => {
       <button class="button__tsar rounded-full xl:h-10 h-8 justify-center border-purple border-[3px] xl:w-44 w-32 transition-all hover:shadow-lg 
       hover:!border-pink hover:bg-pink hover:text-white" 
               :class="{'!border-pink bg-pink text-white' : selectedPage === 0}" @click="selectedPage = 0">
-        <img src="@/assets/gift_purpleVector.svg" alt="iconGift" v-show="selectedPage !== 0" class="mr-2 transition-all hoverDisapear"> 
-        <img src="@/assets/gift_whiteVector.svg" alt="iconGift" v-show="selectedPage === 0" class="mr-2 transition-all hoverApear"> Подарки</button>
+        <img src="@/vendor/landing/assets/gift_purpleVector.svg" alt="iconGift" v-show="selectedPage !== 0" class="mr-2 transition-all hoverDisapear"> 
+        <img src="@/vendor/landing/assets/gift_whiteVector.svg" alt="iconGift" v-show="selectedPage === 0" class="mr-2 transition-all hoverApear"> Подарки</button>
       <button class="button__tsar rounded-full xl:h-10 h-8 justify-center border-purple border-[3px] xl:w-44 w-32 transition-all hover:shadow-lg
                    hover:!border-pink hover:bg-pink hover:text-white" 
               :class="{'!border-pink bg-pink text-white hover:drop-shadow hoverDisapear' : selectedPage === 1}"
               @click="selectedPage = 1">
-        <img src="@/assets/diamond_white.svg" alt="icon" v-show="selectedPage === 1" class="mr-1 transition-all hoverApear">
-        <img src="@/assets/diamond.svg" alt="icon" v-show="selectedPage !== 1" class="mr-1 transition-all hoverDisapear"> Алмазы</button>
+        <img src="@/vendor/landing/assets/diamond_white.svg" alt="icon" v-show="selectedPage === 1" class="mr-1 transition-all hoverApear">
+        <img src="@/vendor/landing/assets/diamond.svg" alt="icon" v-show="selectedPage !== 1" class="mr-1 transition-all hoverDisapear"> Алмазы</button>
     </div>
     <p class="mx-auto text-center w-full mb-4" v-show="selectedPage === 0">Инструмент для управления вертикальными цепочками вознаграждений и распределения корпоративных подарков от руководителя или компании к сотруднику</p>
     <p class="mx-auto text-center w-full mb-4" v-show="selectedPage === 1">Инструмент для создания цепочки горизонтального взаимодействия, в которой сотрудники вознаграждают и благодарят друг друга</p>
@@ -86,16 +86,16 @@ onMounted(() => {
       <div class="absolute top-32 -right-3 2xl:-right-24 h-36 flex flex-col justify-between items-stretch">
           <ChatComponent>
             <template #img>
-              <img src="@/assets/chatIcon_3.png" alt="chatIcon" class="mr-3 w-12 h-12 rounded-full">
+              <img src="@/vendor/landing/assets/chatIcon_3.png" alt="chatIcon" class="mr-3 w-12 h-12 rounded-full">
             </template>
             <template #text>
                 <p class="font-normal text-sm">Спасибо большое, <br/> мне очень приятно!</p>
-                <img src="@/assets/heartIcon.svg" alt="heartIcon" class="absolute right-4 -top-4">
+                <img src="@/vendor/landing/assets/heartIcon.svg" alt="heartIcon" class="absolute right-4 -top-4">
             </template>
           </ChatComponent>
           <ChatComponent class="relative left-6">
             <template #img>
-              <img src="@/assets/chatGift.svg" alt="chatIcon" class="mr-3">
+              <img src="@/vendor/landing/assets/chatGift.svg" alt="chatIcon" class="mr-3">
             </template>
             <template #text>
                 <p class="font-normal text-sm">За этот месяц Вы<br/> поблагодарили 10 коллег</p>

@@ -47,7 +47,7 @@ onMounted(() => {
 
 <template>
   <div class="bg-[#F3EDED]">
-    <img src="@/assets/loyal_gift.svg" alt="LoyalGift" class="relative top-5 left-10">
+    <img src="@/vendor/landing/assets/loyal_gift.svg" alt="LoyalGift" class="relative top-5 left-10">
     <!-- <HeaderComp></HeaderComp> -->
     <div class="container mx-auto px-0 md:px-10 2xl:px-36 mt-10">
       <div class="flex md:flex-row flex-col justify-center md:items-center items-end relative mb-20 ">
@@ -60,13 +60,13 @@ onMounted(() => {
           <RunningLine :stringContent="stringContent"></RunningLine>
           <button class="button bg-[#FEB100] text-white border-none xl:h-14 xl:w-72 h-5 w-44 xl:font-bold font-normal hover:!bg-pink_light transition-all hover:shadow-pink_light" @click="showModal = true">Запросить демо</button>
         </div>
-        <img src="@/assets/greeting_img.png" class="xl:h-[775px] xl:object-cover md:block w-3/4 hidden" alt="greetingPage">
-        <img src="@/assets/greeting-decoration.png" class="md:absolute md:-top-6 md:-right-5 md:block hidden" alt="dec">
-        <img src="@/assets/greeting_sm.png" class="w-3/4 md:hidden mr-10" alt="dec">
+        <img src="@/vendor/landing/assets/greeting_img.png" class="xl:h-[775px] xl:object-cover md:block w-3/4 hidden" alt="greetingPage">
+        <img src="@/vendor/landing/assets/greeting-decoration.png" class="md:absolute md:-top-6 md:-right-5 md:block hidden" alt="dec">
+        <img src="@/vendor/landing/assets/greeting_sm.png" class="w-3/4 md:hidden mr-10" alt="dec">
         <div class="absolute bottom-24 left-1/3 h-40 flex-col justify-between items-stretch hidden md:flex">
           <ChatComponent>
             <template #img>
-              <img src="@/assets/chatIcon.png" alt="chatIcon" class="mr-3 w-10 h-10 rounded-full">
+              <img src="@/vendor/landing/assets/chatIcon.png" alt="chatIcon" class="mr-3 w-10 h-10 rounded-full">
             </template>
             <template #text>
                 <p class="font-normal xl:text-sm text-xs">Благодарю за участие<br/> в проекте, выберите,<br/> пожалуйста, подарок!</p>
@@ -74,7 +74,7 @@ onMounted(() => {
           </ChatComponent>
           <ChatComponent class="relative left-24">
             <template #img>
-              <img src="@/assets/chatIcon_2.png" alt="chatIcon" class="mr-3 w-10 h-10 rounded-full">
+              <img src="@/vendor/landing/assets/chatIcon_2.png" alt="chatIcon" class="mr-3 w-10 h-10 rounded-full">
             </template>
             <template #text>
                 <p class="font-normal xl:text-sm text-xs">Выбрал, спасибо,<br/> мне очень приятно!</p>
@@ -84,8 +84,8 @@ onMounted(() => {
       </div>
       <teleport to="body">
         <div class="absolute top-[880px] w-full flex justify-center">
-          <img src="@/assets/garlandLine.svg" alt="" class="w-full object-cover hidden xl:block"/>
-          <img src="@/assets/garland_sm.svg" alt="" class="h-[600px] self-end object-cover xl:hidden">
+          <img src="@/vendor/landing/assets/garlandLine.svg" alt="" class="w-full object-cover hidden xl:block"/>
+          <img src="@/vendor/landing/assets/garland_sm.svg" alt="" class="h-[600px] self-end object-cover xl:hidden">
           <div class="w-40 h-40 rounded-full bg-[#6750A4] blur-xl absolute left-44 bottom-1 transition-all duration-500"
           :style="{'bottom' : (-scrollHieght+y + 6100)/30 + 'px'}"></div>
           <div class="w-40 h-40 rounded-full bg-[#FF7475] blur-xl absolute left-1/3  -bottom-28 transition-all duration-700"
@@ -99,25 +99,25 @@ onMounted(() => {
         <h1 class="mb-12 mx-auto w-3/5 text-center uppercase z-10">Мы знаем, как влюбить в ваш бренд важных для бизнеса людей</h1>
         <div class="flex lg:flex-row flex-col justify-between lg:items-center items-stretch mb-20 z-10 lg:px-0 px-10">
           <InfoCard :header="'Сотрудники'" 
-                    :imgSrc="rootUrl+'assets/workers.svg'" 
+                    :imgSrc="rootUrl+'vendor/landing/assets/workers.svg'" 
                     :imgLabel="'Выстраиваем коммуникацию'"
-                    :mainImg="rootUrl+'assets/communication.png'"
+                    :mainImg="rootUrl+'vendor/landing/assets/communication.png'"
                     :mainContent="['Повышаем eNPS', 'Строим hr-бренд']" :key="123123"/>
           <InfoCard :header="'Клиенты'" 
-                    :imgSrc="rootUrl+'assets/clients.svg'" 
+                    :imgSrc="rootUrl+'vendor/landing/assets/clients.svg'" 
                     :imgLabel="'Формируем доверие'"
-                    :mainImg="rootUrl+'assets/loyalty.png'"
+                    :mainImg="rootUrl+'vendor/landing/assets/loyalty.png'"
                     :mainContent="['Увеличиваем скорость принятия решения о покупке']"
                     :isPositionRight="true" :key="1233"/>
           <InfoCard :header="'Партнёры'" 
-                    :imgSrc="rootUrl+'assets/partners.svg'" 
+                    :imgSrc="rootUrl+'vendor/landing/assets/partners.svg'" 
                     :imgLabel="'Повышаем эффективность'"
-                    :mainImg="rootUrl+'assets/effectiv.png'"
+                    :mainImg="rootUrl+'vendor/landing/assets/effectiv.png'"
                     :mainContent="['Повышаем лояльность', 'Увеличиваем узнаваемость']" :key="123"/>
         </div>
         <h1 class="xl:mx-auto xl:w-3/5 xl:text-center mb-5 xl:mb-0 text-left ml-10">IT - СЕРВИС ДЛЯ СМЫСЛОВЫХ КОММУНИКАЦИЙ </h1>
         <div class="relative w-full">
-          <img src="@/assets/communication_big.png" alt="img" class="xl:h-[700px] h-[536px] object-contain mx-auto">
+          <img src="@/vendor/landing/assets/communication_big.png" alt="img" class="xl:h-[700px] h-[536px] object-contain mx-auto">
           <div class="absolute top-0 w-full xl:h-[700px] h-[536px] flex flex-col justify-start items-stretch xl:block xl:px-0 px-10">
             <div v-for="comp, index in itServiceInfo" :key="index" class="xl:absolute bg-white opacity-80 xl:!opacity-100 mb-5 rounded-2xl py-3 px-4 xl:w-96 w-64 self-start" :class="comp['posClass'], {
               'self-end' : index>2
@@ -132,8 +132,8 @@ onMounted(() => {
         </div>
         <h1 class="xl:mx-auto xl:ml-10 xl:text-center text-left uppercase px-10 xl:px-0">Служба распределения и доставки</h1>
         <div class="relative z-10 flex xl:justify-evenly xl:items-center mb-14 xl:flex-row flex-col justify-start items-stretch xl:px-0 px-10">
-          <img src="@/assets/giftDecor.svg" alt="decor" class="z-0 absolute top-6 left-0 xl:block hidden">
-          <img src="@/assets/giftHand.png" alt="giftIcon" class="z-10 xl:relative xl:w-auto w-56 self-end">
+          <img src="@/vendor/landing/assets/giftDecor.svg" alt="decor" class="z-0 absolute top-6 left-0 xl:block hidden">
+          <img src="@/vendor/landing/assets/giftHand.png" alt="giftIcon" class="z-10 xl:relative xl:w-auto w-56 self-end">
           <div class="z-10 flex sm:w-[348px] w-full justify-between h-[240px] items-stretch flex-col mr-[25px] top-2 xl:relative xl:-left-[30px] self-start xl:self-auto">
             <p><span class="font-bold">Автоматизируйте процесс</span><br/> и управляйте эффективностью вовлечённых в процесс распределения и доставки сотрудников компании</p>
             <p><span class="font-bold">Оптимизируйте затраты</span><br/> человеческого ресурса<br/> за счёт передачи на аутсорс непрофильных задач</p>

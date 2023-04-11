@@ -6,7 +6,7 @@
   <header class="w-full h-20 flex justify-around items-center shadow-lg bg-white mb-10">
     <div class="flex justify-start items-center">
       <div class="logo mr-20">
-        <img src="@/assets/loyal_gift.svg" alt="LoyalGift" class="relative -top-1">
+        <img src="@/vendor/landing/assets/loyal_gift.svg" alt="LoyalGift" class="relative -top-1">
       </div>
       <ul class="text-lg flex justify-start items-center text-header_links">
         <li class="mr-5">

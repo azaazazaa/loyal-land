@@ -5,22 +5,22 @@ import { ref } from 'vue'
   const pages = ref([
     {
       btnLabel: 'Впечатление', 
-      btnImg: rootUrl+'assets/btnImg1.png', 
+      btnImg: rootUrl+'vendor/landing/assets/btnImg1.png', 
       isOpen: true
     },
     {
       btnLabel: 'Забота о сотрудниках', 
-      btnImg: rootUrl+'assets/impression.png', 
+      btnImg: rootUrl+'vendor/landing/assets/impression.png', 
       isOpen: false
     },
     {
       btnLabel: 'Обучение', 
-      btnImg: rootUrl+'assets/studying.png', 
+      btnImg: rootUrl+'vendor/landing/assets/studying.png', 
       isOpen: false
     },
     {
       btnLabel: 'Развитие', 
-      btnImg: rootUrl+'assets/developmentIcon.png', 
+      btnImg: rootUrl+'vendor/landing/assets/developmentIcon.png', 
       isOpen: false
     },
   ])
@@ -28,68 +28,68 @@ import { ref } from 'vue'
   const cardsContetn = ref([
     [
       {
-        imgSrc: rootUrl+'assets/siesta.png',
+        imgSrc: rootUrl+'vendor/landing/assets/siesta.png',
         headerLabel: 'сиеста',
         description: 'Представьте, что обеденный перерыв три часа вместо одного. Достаточно времени, чтобы прогуляться, пройти урок иностранного языка, почитать в уютном кафе или вздремнуть в переговорной.'
       },
       {
-        imgSrc: rootUrl+'assets/roleChanges.png',
+        imgSrc: rootUrl+'vendor/landing/assets/roleChanges.png',
         headerLabel: 'поменяться ролями',
         description: 'Вы хорошо знаете свои рабочие обязанности. А как проходит рабочий день ваших коллег? Обмен опытом открывает другие возможности и сферы влияния. Вдохновляйтесь на новое!'
       },
       {
-        imgSrc: rootUrl+'assets/library.png',
+        imgSrc: rootUrl+'vendor/landing/assets/library.png',
         headerLabel: 'читальный зал',
         description: 'Подарок для тех, кому не хватает времени или условий, чтобы удобно устроившись в кресле, почитать бумажную книгу без отвлечений.'
       },
     ],
     [
       {
-        imgSrc: rootUrl+'assets/space.png',
+        imgSrc: rootUrl+'vendor/landing/assets/space.png',
         headerLabel: 'я сегодня в космос',
         description: 'Может оказаться, что звезда, которая ночью видна из окна, вовсе не звезда, а планета. Через телескопы мира та планета откроется новыми видами. А если космос покажется одиноким, встречайте закат на Марсе с Curiosity.'
       },
       {
-        imgSrc: rootUrl+'assets/colorsHoly.png',
+        imgSrc: rootUrl+'vendor/landing/assets/colorsHoly.png',
         headerLabel: 'другая индия',
         description: 'Индия у каждого своя. Путешествуйте без билетов через чувства, мысли, истории, фотографии, фильмы и рассказы других людей.'
       },
       {
-        imgSrc: rootUrl+'assets/forest.png',
+        imgSrc: rootUrl+'vendor/landing/assets/forest.png',
         headerLabel: 'сосновый лес',
         description: 'Вы помните свои прогулки по лесу? Как дышалось? О чем думали? Что запомнилось – запахи, звуки,  настроение? День в лесу – подарок-лекарство для тела и ума.'
       },
     ],
     [
       {
-        imgSrc: rootUrl+'assets/futureBecame.png',
+        imgSrc: rootUrl+'vendor/landing/assets/futureBecame.png',
         headerLabel: 'Будущее наступило',
         description: 'Ты человек? Вопрос, который мы задаём всё чаще. Это курс о разговорах с чат-ботами и нейросетях. Как пользоваться, о чем говорить, чему учиться друг у друга?'
       },
       {
-        imgSrc: rootUrl+'assets/loveWithoutRules.png',
+        imgSrc: rootUrl+'vendor/landing/assets/loveWithoutRules.png',
         headerLabel: 'любовь по правилам и без',
         description: 'Готовы влюбиться в того, кто рядом? 36 вопросов для моментальной влюбленности и 390 минут беспрерывной любви.'
       },
       {
-        imgSrc: rootUrl+'assets/codeAccessible.png',
+        imgSrc: rootUrl+'vendor/landing/assets/codeAccessible.png',
         headerLabel: 'доступный код',
         description: 'Программист – профессия, о которой сейчас знают все, но что именно знают? Легендарный Гарвардский курс CS50 «Основы программирования» - интересное вовлечение в профессию для каждого.'
       },
     ],
     [
       {
-        imgSrc: rootUrl+'assets/hobbyTime.png',
+        imgSrc: rootUrl+'vendor/landing/assets/hobbyTime.png',
         headerLabel: 'зелёная стена',
         description: 'Хобби приносит неплохой доход, а своё дело открыть страшно. Может не хватает знаний, а потому и уверенности, или хочется поддержки и полезных советов. Вдохновитесь и начните сегодня!'
       },
       {
-        imgSrc: rootUrl+'assets/artTravel.png',
+        imgSrc: rootUrl+'vendor/landing/assets/artTravel.png',
         headerLabel: 'руками трогать',
         description: 'Не разбираетесь в искусстве? Отлично! В пижаме, не выходя из дома, потрогайте руками картину, послушайте живопись, поиграйте в художника и искусствоведа, а на десерт сходите в музей.'
       },
       {
-        imgSrc: rootUrl+'assets/misic.png',
+        imgSrc: rootUrl+'vendor/landing/assets/misic.png',
         headerLabel: 'музыка',
         description: 'Электронная музыка изменила представление о том, что значит быть музыкантом. Вы хотите услышать, как звучит ваша музыка? Наслаждайтесь!'
       },
@@ -163,12 +163,12 @@ import { ref } from 'vue'
         <span class="bg-purple rounded-full flex justify-center items-center mr-6 text-white h-4 w-4 hover:cursor-pointer select-none"
               :class="{'!bg-[#CAC4D0]' : sliderIndex === 0}"
               @click="previosBlock()">
-          <img src="@/assets/rightArray.svg" alt="left" class="rotate-180">
+          <img src="@/vendor/landing/assets/rightArray.svg" alt="left" class="rotate-180">
         </span>
         <span class="bg-purple rounded-full flex justify-center items-center text-white h-4 w-4 hover:cursor-pointer select-none"
               :class="{'!bg-[#CAC4D0]' : sliderIndex === 2}"
               @click="nextBlock()">
-          <img src="@/assets/rightArray.svg" alt="right">
+          <img src="@/vendor/landing/assets/rightArray.svg" alt="right">
         </span>
       </div>
     </div>

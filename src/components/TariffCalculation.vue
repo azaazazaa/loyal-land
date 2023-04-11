@@ -62,7 +62,7 @@ watch(workersNum, (newVal, oldVal) => {
         </div>
         <div class="absolute top-0 flex flex-col justify-start items-center -z-10 min-w-max select-none" :style="{left: getLeftSpacing}">
           <div class="relative">
-            <img src="@/assets/dropShape.svg" alt="rangeIcon" class="h-6 xl:h-auto">
+            <img src="@/vendor/landing/assets/dropShape.svg" alt="rangeIcon" class="h-6 xl:h-auto">
             <span class="absolute xl:top-3 top-2 xl:text-[12px] text-[5px] text-white font-normal left-1/2 -translate-x-1/2">{{ workersNum }}</span>
           </div>
           <div class="rangeButton rounded-full bg-purple xl:w-5 xl:h-5 w-[10px] h-[10px] relative">
@@ -86,8 +86,8 @@ watch(workersNum, (newVal, oldVal) => {
       <input type="number" min="0" step="1" max="60000" class="border-none text-center w-32 
              underline text-purple xl:text-3xl text-xl font-medium p-0 relative xl:left-5" v-model="workersNum">
       <div class="xl:flex justify-around h-9 w-5 flex-col items-center relative z-10 left-1 bg-white hidden">
-        <img src="@/assets/topArrowSm.svg" alt="topIcon">
-        <img src="@/assets/topArrowSm.svg" alt="bottomIcon" class="rotate-180">
+        <img src="@/vendor/landing/assets/topArrowSm.svg" alt="topIcon">
+        <img src="@/vendor/landing/assets/topArrowSm.svg" alt="bottomIcon" class="rotate-180">
       </div>
     </div>
     <h3 class="text-purple xl:text-2xl text-sm mx-auto text-center mb-3 xl:mb-6">сотрудников</h3>

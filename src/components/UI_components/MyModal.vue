@@ -175,7 +175,7 @@ const isFormValid = computed(() => {
                 </form>
               </div>
               <div class="success py-4" v-show="isSendingSuccess">
-                <img src="@/assets/confetti.svg" alt="confetti" class="-z-10 absolute -left-0 -top-0 w-[576px] h-[272px]">
+                <img src="@/vendor/landing/assets/confetti.svg" alt="confetti" class="-z-10 absolute -left-0 -top-0 w-[576px] h-[272px]">
                 <p class="text-center items-baseline text-2xl font-normal z-10">Благодарим за интерес к нашему сервису. Встрече быть. Мы скоро свяжемся с Вами. А пока, пожалуйста, примите от нас <a class="font-semibold text-2xl underline text-pink_light hover:cursor-pointer" href="https://loyal.gift/p/TeN5u8A9" target="_blank">небольшой подарок!</a></p>
               </div>
             </DialogPanel>
